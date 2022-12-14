@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <title>Formulario De Registro</title>
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+    </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bienvenido a calculadora Biomass</title>
+        <link rel="shortcut icon" href="img/logitob.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="css/biomass.css" </head> <body>
+        <header>
+            <nav>
+                <a href="index.html">Volver a la pagína inicial.</a>
+            </nav>
+            <section class="textos-header">
+                <h1>Registrate en Biomass. </h1>
+                <h2>Conviertete en usuario de Biomass y podras calcular la biomasa de bosques humedos cuando quieras.</h2>
+            </section>
+            <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                    style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                        style="stroke: none; fill: #fff;"></path>
+                </svg></div>
+    
+        </header>
+           
+    
+    <body>
+        <h1>
+            <?php
+                include("preguntas.php");
+                                      ?><?php
+            $servidor="localhost";
+            $usuario="root";
+            $clave="";
+            $basededatos="formulario";
+            $enlace = mysqli_connect($servidor,$usuario,$clave,$basededatos);
+            if(!$enlace){
+                echo"error en la conexión con el servidor";
+            
+            }
+            ?> </h1>
+
+	<div class="contenedor">
+		<form action="#" class="formulario" id="formulario" name="formulario" method="POST">
+			<div class="contenedor-inputs">
+				<input type="text" name="nombre" placeholder="Nombre">
+				<input type="text" name="correo" placeholder="Correo">
+                <input type="text" comentarios="correo" placeholder="Comentarios sobre Biomass">
+
+				<div class="sexo">
+					<input type="radio" name="sexo" id="hombre" value="hombre">
+					<label class="label-radio hombre" for="hombre">Hombre</label>
+
+					<input type="radio" name="sexo" id="mujer" value="mujer">
+					<label class="label-radio mujer" for="mujer">Mujer</label>
+				</div>
+
+		
+
+				<ul class="error" id="error"></ul>
+			</div>
+
+			<input type="submit" class="btn" name="registrarse" value="Registrate">
+		</form>
+		<div class="tabla">
+			
+		</div>
+	</div>
+	<script src="preguntas.php"></script>
+
+</body>
+</html>
+		
+						
+						
+				
+	
